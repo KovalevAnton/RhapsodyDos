@@ -22,9 +22,11 @@ module.exports = (isProduction) => {
       ...createRemoteEntry('dos', isProduction),
     },
     shareScope: 'default',
+    exposes: {
+      './App': './src/App.tsx',
+    },
     shared: [
       {
-        ...dependencies,
         react: {
           singleton: true,
           requiredVersion: dependencies['react'],
@@ -34,6 +36,10 @@ module.exports = (isProduction) => {
           singleton: true,
           requiredVersion: dependencies['react-dom'],
           eager: true,
+        },
+        'react-router-dom': {
+          singleton: true,
+          requiredVersion: dependencies['react-router-dom'],
         },
       },
     ],
