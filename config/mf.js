@@ -14,12 +14,12 @@ const createRemoteEntry = (key, isProd) => {
 
 module.exports = (isProduction) => {
   return new ModuleFederationPlugin({
-    name: `${mfConfig.dos.name}`,
-    filename: `${mfConfig.dos.name}/remoteEntry.js`,
+    name: `${mfConfig.login.name}`,
+    filename: `${mfConfig.login.name}/remoteEntry.js`,
     remotes: {
       ...createRemoteEntry('shell', isProduction),
       ...createRemoteEntry('uno', isProduction),
-      ...createRemoteEntry('dos', isProduction),
+      ...createRemoteEntry('login', isProduction),
     },
     shareScope: 'default',
     exposes: {

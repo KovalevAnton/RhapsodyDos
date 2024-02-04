@@ -9,8 +9,8 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: paths.build,
-    filename: `${mfConfig.dos.name}/[contenthash].bundle.js`,
-    chunkFilename: `${mfConfig.dos.name}/[contenthash].bundle.js`,
+    filename: `${mfConfig.login.name}/[contenthash].bundle.js`,
+    chunkFilename: `${mfConfig.login.name}/[contenthash].bundle.js`,
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -47,7 +47,7 @@ module.exports = {
         exclude: /node_modules/,
         type: 'asset/resource',
         generator: {
-          filename: `${mfConfig.dos.name}/img/[name]-[hash:6][ext]`,
+          filename: `${mfConfig.login.name}/img/[name]-[hash:6][ext]`,
         },
       },
       {
@@ -55,7 +55,7 @@ module.exports = {
         exclude: /node_modules/,
         type: 'asset/resource',
         generator: {
-          filename: `${mfConfig.dos.name}/fonts/[name]-[hash:6][ext]`,
+          filename: `${mfConfig.login.name}/fonts/[name]-[hash:6][ext]`,
         },
       },
       {
@@ -63,7 +63,7 @@ module.exports = {
         exclude: /node_modules/,
         type: 'asset/resource',
         generator: {
-          filename: `${mfConfig.dos.name}/icons/[name]-[hash:6][ext]`,
+          filename: `${mfConfig.login.name}/icons/[name]-[hash:6][ext]`,
         },
       },
     ],

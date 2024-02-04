@@ -7,7 +7,7 @@ const paths = require('./paths');
 const commonConfig = require('./webpack.common');
 const mfConfig = require('../mf.config');
 
-const port = mfConfig.dos.port
+const port = mfConfig.login.port
 
 module.exports = merge(commonConfig, {
   mode: 'development',

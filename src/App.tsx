@@ -1,9 +1,11 @@
 import React from 'react';
 
+import LoginPage from '@/pages/LoginPage';
+
 const App = () => {
   return (
     <div>
-      <h1>Dos</h1>
+      <LoginPage />
     </div>
   );
 };

@@ -1,8 +1,8 @@
 {
-  "name": "RhapsodyDos",
+  "name": "RhapsodyLogin",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/KovalevAnton/RhapsodyDos.git",
+  "repository": "https://github.com/KovalevAnton/Rhapsody/Users/antonkovalev/Programming/ReactRhapsody/src/module-declarations.d.ts.git",
   "author": "KovalevAnton <kovalevantondev@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -14,6 +14,7 @@
     "@tanstack/react-query": "^5.18.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.1.1",
     "react-router-dom": "^6.22.0"
   },
   "devDependencies": {
