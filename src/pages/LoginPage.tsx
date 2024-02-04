@@ -1,53 +1,35 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Box, Container, CircularProgress } from '@mui/material';
 
-import {
-  logInWithEmailAndPassword,
-  signInWithGoogle,
-  logout,
-} from 'shell/firebase';
+import LoginForm from '@/features/auth/ui/LoginForm';
+import UserProfile from '@/features/auth/ui/UserProfile';
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+import { auth } from 'shell/firebase';
+
+const Login = () => {
+  const [user, loading, error] = useAuthState(auth);
+
+  if (loading) return <CircularProgress />;
 
   return (
-    <div className="">
-      <div className="">
-        <input
-          type="text"
-          className=""
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
-        />
-        <input
-          type="password"
-          className=""
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button
-          className=""
-          onClick={() => logInWithEmailAndPassword(email, password)}
-        >
-          Login
-        </button>
-        <button className="" onClick={() => logout()}>
-          Logout
-        </button>
-        <button className="" onClick={signInWithGoogle}>
-          Login with Google
-        </button>
-        <div>
-          <Link to="/reset">Forgot Password</Link>
-        </div>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
-        </div>
-      </div>
-    </div>
+    <Container component="main" maxWidth="xs">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          mt: 8,
+        }}
+      >
+        {user ? (
+          <UserProfile user={user} />
+        ) : (
+          <LoginForm loading={loading} error={error} />
+        )}
+      </Box>
+    </Container>
   );
-}
+};
+
 export default Login;

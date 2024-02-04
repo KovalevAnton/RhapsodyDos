@@ -23,7 +23,7 @@ module.exports = (isProduction) => {
     },
     shareScope: 'default',
     exposes: {
-      './App': './src/App.tsx',
+      './App': './src/app/App.tsx',
     },
     shared: [
       {
