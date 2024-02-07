@@ -5,7 +5,7 @@ const { merge } = require('webpack-merge');
 const mf = require('./mf');
 const paths = require('./paths');
 const commonConfig = require('./webpack.common');
-const mfConfig = require('../mf.config');
+const mfConfig = require('./mf.config');
 
 const port = mfConfig.login.port
 
