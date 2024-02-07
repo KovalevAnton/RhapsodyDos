@@ -1,5 +1,5 @@
 // features/auth/components/RegisterForm.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TextField, Button, Box, Typography, Container } from '@mui/material';
 
 import { registerWithEmailAndPassword } from 'shell/firebase';
