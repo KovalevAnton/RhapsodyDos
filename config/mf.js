@@ -1,6 +1,6 @@
 const { ModuleFederationPlugin } = require('webpack').container;
 
-const mfConfig = require('../mf.config');
+const mfConfig = require('./mf.config');
 const dependencies = require('../package.json').dependencies;
 
 const createRemoteEntry = (key, isProd) => {

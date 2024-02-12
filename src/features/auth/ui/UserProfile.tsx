@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar, Box, Button, Typography } from '@mui/material';
 
 import { logout } from 'shell/firebase';
